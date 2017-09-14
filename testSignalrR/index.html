@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+</head>
+<body>
+    <div class="room"></div>
+     <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/signalr/jquery.signalR.min.js"></script>
+    <script src="http://localhost:33044/signalr/hubs"></script>
+    <script>
+        debugger;
+         var connection = $.hubConnection('http://localhost:33044/signalr');
+    var hub = connection.createHubProxy('chat');
+    var join = function (msg) {
+        $('<p>').text(msg).appendTo('.room');
+    }
+    hub.on('join', join);
+    connection.start(function () {
+        hub.invoke('join');
+    })
+    </script>
+ 
+</body>
+</html>

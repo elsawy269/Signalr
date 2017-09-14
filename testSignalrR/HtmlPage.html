@@ -1,0 +1,56 @@
+﻿<input id="userNameInput" type="text" placeholder="Enter your user name..." />
+<input id="textInput" type="text" placeholder="Enter your status..." />
+
+<button id="publishPostButton">Publish post!</button>
+
+<ul id="postsList"></ul>
+
+<script type="text/javascript">
+        $.ajax({
+            url: 'http://localhost:59093/api/Posts/GetPosts',
+            method: 'GET',
+            dataType: 'JSON',
+            success: addPostsList
+        });
+
+        function addPostsList(posts) {
+            $.each(posts, function (index) {
+                var post = posts[index];
+                addPost(post);
+            });
+        }
+
+        function addPost(post) {
+            $("#postsList").append(
+                    '<li><b>' + post.userName + '</b><br>' + post.text + '</li><br>'
+                 );
+        }
+        $.connection.hub.url = "http://localhost:59093/signalr";
+        debugger;
+        var hub = $.connection.postsHub;
+        $.connection.hub.logging = true;
+
+        // Client method to broadcast the message
+        hub.client.hello = function (message) {
+            debugger;
+            $("#message").text(message);
+        };
+        hub.client.publishPost = addPost;
+
+        $("#publishPostButton").click(function () {
+            hub.server.helloServer();
+            return;
+            var post = {
+                userName: $("#userNameInput").val() || "Guest",
+                text: $("#textInput").val()
+            };
+            $.ajax({
+                url: 'http://localhost:59093/api/Posts/AddPost',
+                method: 'POST',
+                data: post
+            });
+        });
+        $.connection.hub.logging = true;
+        $.connection.hub.start().done(function () {
+            debugger;
+            chat.se

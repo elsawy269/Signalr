@@ -1,0 +1,7 @@
+E:\Mark\LatestChatAPP\ChatAPP\Chat.Hubs\bin\Debug\netcoreapp1.1\Chat.Hubs.deps.json
+E:\Mark\LatestChatAPP\ChatAPP\Chat.Hubs\bin\Debug\netcoreapp1.1\Chat.Hubs.dll
+E:\Mark\LatestChatAPP\ChatAPP\Chat.Hubs\obj\Debug\netcoreapp1.1\Chat.Hubs.csprojResolveAssemblyReference.cache
+E:\Mark\LatestChatAPP\ChatAPP\Chat.Hubs\obj\Debug\netcoreapp1.1\Chat.Hubs.AssemblyInfo.cs
+E:\Mark\LatestChatAPP\ChatAPP\Chat.Hubs\bin\Debug\netcoreapp1.1\Chat.Hubs.pdb
+E:\Mark\LatestChatAPP\ChatAPP\Chat.Hubs\obj\Debug\netcoreapp1.1\Chat.Hubs.dll
+E:\Mark\LatestChatAPP\ChatAPP\Chat.Hubs\obj\Debug\netcoreapp1.1\Chat.Hubs.pdb
